@@ -4,7 +4,6 @@ import { NavigationActions, StackActions } from "react-navigation";
 import Icon from "../images/images";
 import { connect } from 'react-redux'
 import { getUserToken, saveUserToken } from '../redux/action';
-import { AsyncStorage } from 'react-native';
 
 class LoginScreen extends Component {
 
@@ -39,7 +38,7 @@ class LoginScreen extends Component {
           this.props.setUser(data)
           console.log("getuser: " + this.props.getUser())
           this.props.navigation.navigate('Home')
-          this.hideBackButton()
+          //this.hideBackButton()
         }
       }).catch(err => {
         console.log(err)
@@ -71,12 +70,6 @@ class LoginScreen extends Component {
   }
 
   render() {
-    /*if (this.props.user) {
-      console.log('render: ', this.props.user.token.token)
-      this.hideBackButton()
-      return this.props.navigation.navigate('Home')
-    }*/
-
     return (
 
       <View style={styles.container}>

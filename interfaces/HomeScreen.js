@@ -17,10 +17,19 @@ class HomeScreen extends Component {
         }
 
         this.toggleView = this.toggleView.bind(this)
+        this.hideBackButton = this.hideBackButton.bind(this)
     }
 
     static navigationOptions = {
         title: 'my.genius'
+    }
+
+    componentWillMount() {
+        this.props.getUser().then(data => {
+            let token = JSON.parse(this.props.user.token.token)
+            console.log("component", token.sToken)
+            
+          })
     }
 
     toggleView = (view) => {
@@ -34,6 +43,20 @@ class HomeScreen extends Component {
                 this.setState({ error })
             })
     }
+
+    hideBackButton = () => {
+        this.props.navigation.dispatch(
+          StackActions.reset({
+            index: 0,
+            actions: [
+              NavigationActions.navigate({ routeName: 'Home' }),
+              NavigationActions.navigate({ routeName: 'Grades' })
+            ]
+          })
+        )
+    
+        console.log("getUser Login: " + JSON.stringify(this.props.user))
+      }
 
     render() {
 

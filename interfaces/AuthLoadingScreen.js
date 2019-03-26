@@ -25,8 +25,7 @@ class AuthLoadingScreen extends React.Component {
         console.log('dfsjgkf')
         this.props.getUser().then(data => {
             console.log("user data: ", this.props.user.token.token)
-            this.props.navigation.navigate(this.props.user.token.token.sToke !== undefined ? 'Home' : 'Login');
-            this.hideBackButton()
+            this.props.navigation.navigate(this.props.user.token.token.sToken !== undefined ? 'Auth' : 'App');
         })
             .catch(error => {
                 this.setState({ error })
