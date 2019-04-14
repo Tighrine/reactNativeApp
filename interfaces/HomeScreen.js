@@ -7,6 +7,7 @@ import Groups from './Groups';
 import Logout from './Logout'
 import { connect } from 'react-redux'
 import { getUserToken } from '../redux/action';
+import { Constants, Notifications, Permissions } from 'expo';
 
 class HomeScreen extends Component {
 
@@ -17,7 +18,6 @@ class HomeScreen extends Component {
         }
 
         this.toggleView = this.toggleView.bind(this)
-        this.hideBackButton = this.hideBackButton.bind(this)
     }
 
     static navigationOptions = {
@@ -28,35 +28,55 @@ class HomeScreen extends Component {
         this.props.getUser().then(data => {
             let token = JSON.parse(this.props.user.token.token)
             console.log("component", token.sToken)
+
+        })
+    }
+
+    async componentDidMount() {
+
+        let result = await Permissions.askAsync(Permissions.NOTIFICATIONS)
+
+        if (Constants.isDevice && result.status === 'granted')
+            console.log('Notification permission granted')
+
+
+        Notifications.addListener(listener=> {
             
-          })
+        })
+
+    }
+
+    handleNotification() {
+        console.warn('ok! got your notif');
     }
 
     toggleView = (view) => {
         this.setState({ view })
-        //let user = this.props.navigation.getParam('user', {})
+
         console.log('Home: ', this.props.user)
+
         this.props.getUser().then(() => {
             console.log(this.props.token.token);
         })
             .catch(error => {
                 this.setState({ error })
             })
-    }
 
-    hideBackButton = () => {
-        this.props.navigation.dispatch(
-          StackActions.reset({
-            index: 0,
-            actions: [
-              NavigationActions.navigate({ routeName: 'Home' }),
-              NavigationActions.navigate({ routeName: 'Grades' })
-            ]
-          })
-        )
-    
-        console.log("getUser Login: " + JSON.stringify(this.props.user))
-      }
+        const localNotification = {
+            title: 'done',
+            body: 'done!'
+        };
+
+        const schedulingOptions = {
+            time: (new Date()).getTime() + 10
+        }
+
+        // Notifications show only when app is not active.
+        // (ie. another app being used or device's screen is locked)
+        Notifications.scheduleLocalNotificationAsync(
+            localNotification, schedulingOptions
+        );
+    }
 
     render() {
 

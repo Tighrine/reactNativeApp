@@ -24,8 +24,10 @@ class AuthLoadingScreen extends React.Component {
     _bootstrapAsync = () => {
         console.log('dfsjgkf')
         this.props.getUser().then(data => {
-            console.log("user data: ", this.props.user.token.token)
-            this.props.navigation.navigate(this.props.user.token.token.sToken !== undefined ? 'Auth' : 'App');
+            let token = JSON.parse(this.props.user.token.token)
+            console.log("user data: ", token.sToken)
+            console.log("object: ", data)
+            this.props.navigation.navigate(token.sToken !== undefined ? 'App' : 'Auth');
         })
             .catch(error => {
                 this.setState({ error })
