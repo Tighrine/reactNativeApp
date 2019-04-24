@@ -40,9 +40,7 @@ class HomeScreen extends Component {
             console.log('Notification permission granted')
 
 
-        Notifications.addListener(listener=> {
-            
-        })
+        Notifications.addListener(this.handleNotification)
 
     }
 

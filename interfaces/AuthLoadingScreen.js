@@ -34,20 +34,6 @@ class AuthLoadingScreen extends React.Component {
 
     };
 
-    hideBackButton = () => {
-        this.props.navigation.dispatch(
-          StackActions.reset({
-            index: 0,
-            actions: [
-              NavigationActions.navigate({ routeName: 'Home' }),
-              NavigationActions.navigate({ routeName: 'Grades' })
-            ]
-          })
-        )
-    
-        console.log("getUser Login: " + JSON.stringify(this.props.user))
-      }
-
     // Render any loading content that you like here
     render() {
         return (
