@@ -3765,11 +3765,6 @@ lodash.filter@^4.6.0:
   resolved "https://registry.yarnpkg.com/lodash.filter/-/lodash.filter-4.6.0.tgz#668b1d4981603ae1cc5a6fa760143e480b4c4ace"
   integrity sha1-ZosdSYFgOuHMWm+nYBQ+SAtMSs4=
 
-lodash.get@^4.4.2:
-  version "4.4.2"
-  resolved "https://registry.yarnpkg.com/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
-  integrity sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=
-
 lodash.isequal@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.isequal/-/lodash.isequal-4.5.0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
@@ -4992,13 +4987,12 @@ react-native-branch@2.2.5:
   resolved "https://registry.yarnpkg.com/react-native-branch/-/react-native-branch-2.2.5.tgz#4074dd63b4973e6397d9ce50e97b57c77a518e9d"
   integrity sha1-QHTdY7SXPmOX2c5Q6XtXx3pRjp0=
 
-react-native-calendars@1.22.0:
-  version "1.22.0"
-  resolved "https://registry.yarnpkg.com/react-native-calendars/-/react-native-calendars-1.22.0.tgz#873836dc7faa70dbf870da08944661370a0e5fae"
-  integrity sha512-7blT6v8mU8bRC1JqnDTnnHNlTmqQfa5FXWOkKSd6mtdF+EgrV+WyM1iHQzzwyjHYJlLKMqQALdCA+xqvK6lG9w==
+react-native-calendars@1.217.0:
+  version "1.217.0"
+  resolved "https://registry.yarnpkg.com/react-native-calendars/-/react-native-calendars-1.217.0.tgz#57b3df60b77e3e4e02775e8e2ed3d99b57b3547a"
+  integrity sha512-thbuQV32mxleXxYgjTIRO40uNEfWckJk2EV+NLlzp5i2HmVNgr4G2l+PiNOm7FDsCV8EskhDw/pIp4I4EnmE6A==
   dependencies:
-    lodash.get "^4.4.2"
-    lodash.isequal "^4.5.0"
+    lodash "^4.0.0"
     prop-types "^15.5.10"
     xdate "^0.8.0"
 
