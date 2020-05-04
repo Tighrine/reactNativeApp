@@ -813,6 +813,13 @@
     pouchdb-collections "^1.0.1"
     tiny-queue "^0.2.1"
 
+"@react-native-community/push-notification-ios@^1.0.1":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@react-native-community/push-notification-ios/-/push-notification-ios-1.2.0.tgz#3353598450a39c42d079603aad2d1c0f9c2c1729"
+  integrity sha512-B5qPb9P/6vvxGGQDePlK/q6NxoZPWSVFtKCQ9jlboP7gNZmf3AAyBhTzrb++s2NSXXogjkGi6vt9df1ipZiawQ==
+  dependencies:
+    invariant "^2.2.4"
+
 "@react-navigation/core@3.2.0":
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/@react-navigation/core/-/core-3.2.0.tgz#329dfe54f305ee22ed750d51cb09c5d18562d56f"
@@ -5043,10 +5050,12 @@ react-native-maps@expo/react-native-maps#v0.22.1-exp.0:
   version "0.22.1"
   resolved "https://codeload.github.com/expo/react-native-maps/tar.gz/e6f98ff7272e5d0a7fe974a41f28593af2d77bb2"
 
-react-native-push-notification@^3.1.2:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/react-native-push-notification/-/react-native-push-notification-3.1.2.tgz#a6129fb2897773a19c7b42bba1b51a9a4aac7df3"
-  integrity sha512-MjjPNXb2Cw7g1D41DtVbTVuGFCAtADxb91pAEFSkQ0AZ2gIooqYkWFHBL6woc15QHhtaZS8VT2GQoyW5OWlxIg==
+react-native-push-notification@^3.3.1:
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/react-native-push-notification/-/react-native-push-notification-3.3.1.tgz#318492cab079872f68988348d3331d9c4fcd871a"
+  integrity sha512-Mn28c3gos5y4kWLz9vP/VzO6GpEOMNVGrSleqnf3I0+6eiALQWs+BtyBwH+7wIn0ztDYclh5vQRjyy6b3vya7g==
+  dependencies:
+    "@react-native-community/push-notification-ios" "^1.0.1"
 
 react-native-reanimated@1.0.0-alpha.11:
   version "1.0.0-alpha.11"
