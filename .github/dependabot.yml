@@ -1,0 +1,33 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: react-native-calendars
+    versions:
+    - 1.1200.0
+    - 1.1209.0
+    - 1.1222.0
+    - 1.1230.0
+    - 1.1247.0
+    - 1.1248.0
+    - 1.1249.0
+    - 1.1250.0
+    - 1.1252.0
+    - 1.1254.0
+    - 1.1255.0
+    - 1.1257.0
+    - 1.1258.0
+  - dependency-name: expo
+    versions:
+    - 40.0.1
+    - 41.0.0
+  - dependency-name: react-navigation
+    versions:
+    - 4.4.3
+  - dependency-name: redux
+    versions:
+    - 4.0.5
